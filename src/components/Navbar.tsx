@@ -11,7 +11,10 @@ export default function Navbar() {
       <Link href="/" className="font-bold text-xl">E-Shop</Link>
       <div className="flex items-center gap-4">
         {user.loggedIn ? (
-          <span>Hi, {user.currentUser?.username}</span>
+          <>
+            <span>Hi, {user.currentUser?.username}</span>
+            <Link href="/checkout">Checkout</Link>
+          </>
         ) : (
           <Link href="/login">Login</Link>
         )}

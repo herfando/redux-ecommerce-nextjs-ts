@@ -9,7 +9,9 @@ interface CartState {
     items: CartItem[];
 }
 
-const initialState: CartState = { items: [] };
+// Ambil cart dari localStorage saat init
+const savedCart = typeof window !== 'undefined' ? localStorage.getItem('cart') : null;
+const initialState: CartState = { items: savedCart ? JSON.parse(savedCart) : [] };
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -19,11 +21,16 @@ const cartSlice = createSlice({
             const item = state.items.find(i => i.id === action.payload.id);
             if (item) item.quantity += 1;
             else state.items.push({ ...action.payload, quantity: 1 });
+            localStorage.setItem('cart', JSON.stringify(state.items));
         },
         removeFromCart(state, action: PayloadAction<number>) {
             state.items = state.items.filter(i => i.id !== action.payload);
+            localStorage.setItem('cart', JSON.stringify(state.items));
         },
-        clearCart(state) { state.items = []; },
+        clearCart(state) {
+            state.items = [];
+            localStorage.removeItem('cart');
+        },
     },
 });
 
