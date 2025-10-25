@@ -4,7 +4,7 @@ export interface Product {
     id: number;
     title: string;
     price: number;
-    img: string;           // gunakan 'img' bukan 'image'
+    img: string;
     description?: string;
 }
 
