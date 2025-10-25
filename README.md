@@ -1,8 +1,8 @@
-<p align="center"> # 🛒 NextJS E-Commerce Fullstack 
+# 🛒 NextJS E-Commerce Fullstack </p>
 
-![E-Commerce Demo](https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif) 
+   ![E-Commerce Demo](https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif) 
 > A modern, full-featured **E-Commerce Web App** built with **Next.js, TypeScript, Tailwind CSS & Redux Toolkit**. Features full authentication, product management, cart, checkout, and responsive design. Perfect for learning modern **full-stack web development**. 🚀💻
-> </p>
+> 
 
 ---
 
