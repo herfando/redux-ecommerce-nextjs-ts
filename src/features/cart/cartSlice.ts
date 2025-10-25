@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from '../product/productSlice';
 
-interface CartItem extends Product {
+export interface CartItem extends Product {
     quantity: number;
 }
 
@@ -9,7 +9,6 @@ interface CartState {
     items: CartItem[];
 }
 
-// Ambil cart dari localStorage saat init
 const savedCart = typeof window !== 'undefined' ? localStorage.getItem('cart') : null;
 const initialState: CartState = { items: savedCart ? JSON.parse(savedCart) : [] };
 
