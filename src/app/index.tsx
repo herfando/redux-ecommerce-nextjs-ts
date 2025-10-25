@@ -13,16 +13,7 @@ export default function HomePage() {
   useEffect(() => {
     fetch('https://dummyjson.com/products')
       .then(res => res.json())
-      .then(data => {
-        const mappedProducts: Product[] = data.products.map((p: any) => ({
-          id: p.id,
-          title: p.title,
-          price: p.price,
-          img: p.thumbnail,   // pastikan sesuai property Product
-          description: p.description,
-        }));
-        dispatch(setProducts(mappedProducts));
-      });
+      .then(data => dispatch(setProducts(data.products)));
   }, [dispatch]);
 
   return (
